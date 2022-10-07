@@ -6,4 +6,3 @@ include("vues/v_footer.php");
 include("vues/v_header.php");
 
 $pdo = PdoPuyDuFou::getPdoPuyDuFou();
-echo'test with my pc';
