@@ -1,7 +1,5 @@
-# PuyDuFou
+# PuyDuFou (School project)
 
-Projet qui consiste à créer un site internet du Puy du Fou.
-Un algorithme doit permettre à l'utilisateur de choisir les spectacles auxquels il veut assister,
-lui donner le trajet le plus court et lui donner le temps nécessaires pour tout faire.
-
-	
+Project which consists in creating a website of the Puy du Fou.
+An algorithm must allow the user to choose the shows he wants to attend,
+give him the shortest route and give him the time needed to do everything.
