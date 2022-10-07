@@ -4,4 +4,4 @@ require_once("utils/class.pdoPuyDuFou.inc.php");
 
 $pdo = PdoPuyDuFou::getPdoPuyDuFou();
 echo 'test';
-echo '3';
+echo '4';
