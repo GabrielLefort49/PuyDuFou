@@ -2,7 +2,6 @@
 
 /** 
  * Classe d'accès aux données. 
- 
  * Utilise les services de la classe PDO
  * pour l'application JardiPlants
  * Les attributs sont tous statiques,
@@ -38,7 +37,7 @@ class PdoPuyDuFou
      * Fonction statique qui crée l'unique instance de la classe
      *
      * Appel : $instancePdoPuyDuFou = PdoPuyDuFou::getPdoPuyDuFou();
-     * @return l'unique objet de la classe PdoJardiPlants
+     * return l'unique objet de la classe PdoJardiPlants
      */
     public  static function getPdoPuyDuFou()
     {
@@ -50,7 +49,7 @@ class PdoPuyDuFou
     /**
      * Retourne tous les spéctacles sous forme d'un tableau associatif
      *
-     * @return le tableau associatif des spéctacles 
+     * return le tableau associatif des spéctacles 
      */
     public function getLesSpectacles()
     {
