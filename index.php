@@ -3,7 +3,7 @@
 require_once("utils/class.pdoPuyDuFou.inc.php");
 require_once("utils/functions.inc.php");
 // inclusion des vues footer et header
-include("Vues/v_footer.php");
+include("Vues/v_entete.php");
 include("Vues/v_header.php");
 
 
@@ -22,3 +22,4 @@ switch ($uc) {
             break;
         }
 }
+include("Vues/v_footer.php");
