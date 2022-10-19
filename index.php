@@ -19,7 +19,6 @@ $pdo = PdoPuyDuFou::getPdoPuyDuFou();
 switch ($uc) {
     case 'accueil': {
             include("Vues/v_accueil.php");
-            echo 'test';
             break;
         }
 }
