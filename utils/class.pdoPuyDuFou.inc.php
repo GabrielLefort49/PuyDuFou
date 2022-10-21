@@ -13,10 +13,10 @@
 
 class PdoPuyDuFou
 {
-    private static $serveur = 'mysql:host=db';
-    private static $bdd = 'dbname=PuyDuFou';
-    private static $user = 'root';
-    private static $mdp = '';
+    private static $serveur = 'mysql:host=home657928441.1and1-data.host';
+    private static $bdd = 'dbname=db672809286';
+    private static $user = 'dbo672809286';
+    private static $mdp = 'BMw1234*';
     private static $monPdo;
     private static $monPdoPuyDuFou = null;
 
