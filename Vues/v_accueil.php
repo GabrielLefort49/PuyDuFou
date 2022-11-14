@@ -1,3 +1,8 @@
+<?php // inclusion des vues footer et header
+include("Vues/v_entete.php");
+include("Vues/v_header.php");
+?>
+
 <body>
     <video playsinline autoplay="autoplay" loop="loop" muted="muted">
         <source src="https://www.puydufou.com/france/sites/default/files/homepage/video/puy-du-fou-homepage-2023.mp4"
@@ -7,3 +12,4 @@
     <script src="../utils/js/nav.js"></script>
     <script src="https://kit.fontawesome.com/1cbb64fb02.js" crossorigin="anonymous"></script>
 </body>
+<?php include("Vues/v_footer.php"); ?>

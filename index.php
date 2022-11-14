@@ -3,10 +3,6 @@
 session_start();
 // inclusion en une seule fois du fichier des fonctions et du modèle
 require_once("utils/class.pdoPuyDuFou.inc.php");
-require_once("utils/functions.inc.php");
-// inclusion des vues footer et header
-include("Vues/v_entete.php");
-include("Vues/v_header.php");
 
 
 if (!isset($_REQUEST['uc']))
@@ -28,4 +24,3 @@ switch ($uc) {
             break;
         }
 }
-include("Vues/v_footer.php");

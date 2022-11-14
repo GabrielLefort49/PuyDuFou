@@ -66,13 +66,16 @@ class PdoPuyDuFou
      */
     public function accountExist($mail, $password)
     {
-        $res = PdoPuyDuFou::$monPdo->prepare("SELECT * FROM visiteur WHERE mailvisiteur = :mail AND Password = :mdp LIMIT 1");
+        $res = PdoPuyDuFou::$monPdo->prepare("SELECT * FROM visiteur WHERE mailvisiteur = :mail LIMIT 1");
         $res->bindValue('mail', $mail);
-        $res->bindValue('mdp', $password);
         $res->execute();
         $account = $res->fetch();
         if (!empty($account)) {
-            return $account;
+            if (password_verify($password, $account["Password"])) {
+                return $account;
+            } else {
+                return null;
+            }
         } else {
             return null;
         }
@@ -83,7 +86,7 @@ class PdoPuyDuFou
      *
      * Créer un client à partir des arguments validés passés en paramètres
      */
-    public function creerVisiteur($nom, $prenom, $mail, $password)
+    public function creerVisiteur($nom, $prenom, $mail, $passwordHashed)
     {
         $res = PdoPuyDuFou::$monPdo->prepare('INSERT INTO visiteur (nomvisiteur, 
 			prenomvisiteur, mailvisiteur, Password) VALUES( :nom, 
@@ -91,7 +94,7 @@ class PdoPuyDuFou
         $res->bindValue('nom', $nom);
         $res->bindValue('prenom', $prenom);
         $res->bindValue('mail', $mail);
-        $res->bindValue('password', $password);
+        $res->bindValue('password', $passwordHashed);
         $res->execute();
     }
 

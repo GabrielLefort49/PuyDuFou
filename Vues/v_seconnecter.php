@@ -1,3 +1,9 @@
+<?php
+// inclusion des vues footer et header
+include("Vues/v_entete.php");
+include("Vues/v_header.php");
+?>
+
 <div class="container-connection">
     <div class="wrapper">
         <div class="img-connect">
@@ -49,6 +55,7 @@
         </div>
     </div>
 </div>
+<?php include("Vues/v_footer.php"); ?>
 <script src="../utils/js/login.js"></script>
 <script src="../utils/js/nav.js"></script>
 <script src="https://kit.fontawesome.com/1cbb64fb02.js" crossorigin="anonymous"></script>

@@ -21,9 +21,6 @@ switch ($action) {
                     $id = $account['Id_Visiteur'];
                     $pdo->createSession($id, $mail);
                     include('Vues/v_account.php');
-                    $type = "success";
-                    $message = "Vous êtes connecté !";
-                    include('Vues/v_message.php');
                 } else {
                     include("Vues/v_seconnecter.php");
                     $type = "error";
@@ -49,8 +46,12 @@ switch ($action) {
                 $prenom = $_REQUEST['prenomS'];
                 $mail = $_REQUEST['mailS'];
                 $password = $_REQUEST['passwordS'];
-                $result = $pdo->creerVisiteur($nom, $prenom, $mail, $password);
+                $passwordHashed = password_hash($password, PASSWORD_DEFAULT);
+                $result = $pdo->creerVisiteur($nom, $prenom, $mail, $passwordHashed);
                 include('Vues/v_seconnecter.php');
+                $type = "success";
+                $message = "Vous êtes maintenant incrit !";
+                include('Vues/v_message.php');
             }
             break;
         }
