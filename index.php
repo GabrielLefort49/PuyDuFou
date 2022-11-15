@@ -23,4 +23,8 @@ switch ($uc) {
             include('controleurs/c_connection.php');
             break;
         }
+    case 'account': {
+            include('controleurs/c_account.php');
+            break;
+        }
 }

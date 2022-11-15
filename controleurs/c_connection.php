@@ -7,10 +7,10 @@ switch ($action) {
                 $mail = null;
                 $password = null;
                 include('Vues/v_seconnecter.php');
-                break;
             } else {
                 include('Vues/v_account.php');
             }
+            break;
         }
     case 'confirmConnection': {
             $mail = $_REQUEST['username'];
@@ -19,8 +19,11 @@ switch ($action) {
                 $account = $pdo->accountExist($mail, $password);
                 if (!empty($account)) {
                     $id = $account['Id_Visiteur'];
-                    $pdo->createSession($id, $mail);
-                    include('Vues/v_account.php');
+                    $mail = $account['mailvisiteur'];
+                    $password = $account['Password'];
+                    $nom = $account['nomvisiteur'];
+                    $pdo->createSession($id, $mail, $nom);
+                    header('Location: index.php?uc=account&action=profile');
                 } else {
                     include("Vues/v_seconnecter.php");
                     $type = "error";

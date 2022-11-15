@@ -10,8 +10,12 @@
                 </ul>
                 <ul>
                     <li><a href="#">CGU</a></li>
-                    <li><a href="#">Créer votre programme</a></li>
+                    <?php if ($pdo->isConnected()) { ?>
                     <li><a href="index.php?uc=connection&action=seConnecter">Mon compte</a></li>
+                    <li><a href="#">Mon programme</a></li>
+                    <?php } else { ?>
+                    <li><a href="index.php?uc=connection&action=seConnecter"> Se Connecter</a></li>
+                    <?php } ?>
                 </ul>
                 <ul class="social-media">
                     <li><a href="#">
@@ -43,9 +47,14 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Mon programme</a></li>
-                    <li><a href="index.php?uc=connection&action=seConnecter"><i class="fa-solid fa-user"></i> Mon
+                    <?php if ($pdo->isConnected()) { ?>
+                    <li><a href="index.php?uc=account&action=profile"><i class="fa-solid fa-user"></i> Mon
                             compte</a></li>
+                    <li><a href="#"><i class="fa-solid fa-calendar-days"></i> Mon programme</a></li>
+                    <?php } else { ?>
+                    <li><a href="index.php?uc=connection&action=seConnecter"><i class="fa-solid fa-user"></i> Se
+                            Connecter</a></li>
+                    <?php } ?>
                 </ul>
             </div>
             <i class="fas fa-bars" id="menu-btn"></i>
