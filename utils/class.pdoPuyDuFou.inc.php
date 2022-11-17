@@ -98,11 +98,14 @@ class PdoPuyDuFou
         $res->execute();
     }
 
-    public function createSession($id, $mail)
+    public function createSession($id, $mail, $nom, $prenom, $telephone)
     {
         $account = [
             "id" => $id,
-            "mailvisiteur" => $mail
+            "mailvisiteur" => $mail,
+            "nomvisiteur" => $nom,
+            "prenomvisiteur" => $prenom,
+            "numtelephonevisiteur" => $telephone
         ];
         $_SESSION["session"] = $account;
     }

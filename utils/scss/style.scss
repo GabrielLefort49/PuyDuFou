@@ -16,7 +16,7 @@ body {
 }
 
 /* 
-    NAV SECTION
+   ! NAV SECTION
 */
 #navbar {
     background: $white;
@@ -202,13 +202,63 @@ nav .fa-bars:hover {
 }
 
 /* 
-    content of the page LOGIN
+   ! content of the vertical navbar
+*/
+
+.wrapper-profile {
+    display: flex;
+    position: relative;
+}
+
+.wrapper-profile .sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: $background;
+    padding: 30px 0;
+}
+
+.wrapper-profile .sidebar h2 {
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wrapper-profile .sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrapper-profile .sidebar ul li a {
+    color: $white;
+    display: block;
+    text-decoration: none;
+}
+
+.wrapper-profile .sidebar ul li:hover {
+    background: rgb(50, 48, 48);
+}
+
+.wrapper-profile .sidebar ul li:hover a {
+    color: $white;
+}
+
+.wrapper-profile .main-content {
+    width: 100%;
+    margin-left: 200px;
+}
+
+/* 
+   ! content of the page LOGIN
 */
 
 .container-connection {
     display: grid;
     background-image: url(../images/loginpbackground.jpg);
     height: 100%;
+    width: 100%;
     place-items: center;
 }
 

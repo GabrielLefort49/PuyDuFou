@@ -5,4 +5,6 @@ switch ($action) {
     case 'profile': {
             include('Vues/v_account.php');
         }
+    case 'confirmModification': {
+        }
 }
