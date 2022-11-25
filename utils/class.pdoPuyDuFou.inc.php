@@ -98,6 +98,20 @@ class PdoPuyDuFou
         $res->execute();
     }
 
+    public function modifierVisiteur($id, $nom, $prenom, $mail, $telephone, $vitesse)
+    {
+        $res = PdoPuyDuFou::$monPdo-> prepare('UPDATE visiteur SET nomvisiteur = :nom, prenomvisiteur = :prenom,
+        mailvisiteur = :mail, numtelephonevisiteur = :telephone, vitessemarche = :vitesse WHERE Id_Visiteur = :id');
+        $res->bindValue('id',$id);
+        $res->bindValue('nom',$nom);
+        $res->bindValue('prenom', $prenom);
+        $res->bindValue('mail',$mail);
+        $res->bindValue('telephone', $telephone);
+        $res->bindValue('vitesse',$vitesse);
+
+        $res -> execute();
+    }
+
     public function createSession($id, $mail, $nom, $prenom, $telephone)
     {
         $account = [
@@ -105,7 +119,8 @@ class PdoPuyDuFou
             "mailvisiteur" => $mail,
             "nomvisiteur" => $nom,
             "prenomvisiteur" => $prenom,
-            "numtelephonevisiteur" => $telephone
+            "numtelephonevisiteur" => $telephone,
+            "vitessemarche" => $vitesse
         ];
         $_SESSION["session"] = $account;
     }

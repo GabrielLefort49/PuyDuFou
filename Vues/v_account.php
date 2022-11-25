@@ -40,7 +40,8 @@ include("Vues/v_entete.php");
                                     value="<?= $_SESSION['session']['numtelephonevisiteur'] ?>">
                             </div>
                             <div class="field">
-                                <input type="text" name="pas" placeholder="Entrez votre vitesse de pas" value="">
+                                <input type="text" name="pas" placeholder="Entrez votre vitesse de pas" 
+                                value="<?= $_SESSION['session']['vitessemarche'] ?>">
                             </div>
                             <div class="field">
                                 <input type="password" name="password" placeholder="Mot de passe" value="">
