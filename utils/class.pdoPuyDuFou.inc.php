@@ -13,10 +13,10 @@
 
 class PdoPuyDuFou
 {
-    private static $serveur = 'mysql:host=db672809286.db.1and1.com';
-    private static $bdd = 'dbname=db672809286';
-    private static $user = 'dbo672809286';
-    private static $mdp = 'BMw1234*';
+    private static $serveur = 'mysql:host=db';
+    private static $bdd = 'dbname=PuyDuFou';
+    private static $user = 'root';
+    private static $mdp = '';
     private static $monPdo;
     private static $monPdoPuyDuFou = null;
 
@@ -60,6 +60,20 @@ class PdoPuyDuFou
     }
 
     /**
+     * Retourne tous les spéctacles sous forme d'un tableau associatif
+     *
+     * return le tableau associatif des spéctacles 
+     */
+    public function getVisiteur($id)
+    {
+        $res = PdoPuyDuFou::$monPdo->prepare("SELECT * FROM `visiteur` WHERE Id_Visiteur = :id");
+        $res->bindValue('id', $id);
+        $res->execute();
+        $laLigne = $res->fetch();
+        return $laLigne;
+    }
+
+    /**
      * fonction qui prend et compte l'utilisateur que l'on demande
      *
      * 
@@ -98,29 +112,28 @@ class PdoPuyDuFou
         $res->execute();
     }
 
-    public function modifierVisiteur($id, $nom, $prenom, $mail, $telephone, $vitesse)
+    /**
+     * Modifier un visiteur
+     *
+     * modifier un visiteur à partir des arguments validés passés en paramètres
+     */
+    public function modifierVisiteur($id, $nom, $prenom, $mail, $telephone, $marche)
     {
-        $res = PdoPuyDuFou::$monPdo-> prepare('UPDATE visiteur SET nomvisiteur = :nom, prenomvisiteur = :prenom,
-        mailvisiteur = :mail, numtelephonevisiteur = :telephone, vitessemarche = :vitesse WHERE Id_Visiteur = :id');
-        $res->bindValue('id',$id);
-        $res->bindValue('nom',$nom);
+        $res = PdoPuyDuFou::$monPdo->prepare('UPDATE visiteur SET nomvisiteur = :nom, prenomvisiteur = :prenom, mailvisiteur = :mail, 
+        numtelephonevisiteur = :telephone, vitessemarche = :marche WHERE Id_Visiteur = :id');
+        $res->bindValue('id', $id);
+        $res->bindValue('nom', $nom);
         $res->bindValue('prenom', $prenom);
-        $res->bindValue('mail',$mail);
+        $res->bindValue('mail', $mail);
         $res->bindValue('telephone', $telephone);
-        $res->bindValue('vitesse',$vitesse);
-
-        $res -> execute();
+        $res->bindValue('marche', $marche);
+        $res->execute();
     }
 
-    public function createSession($id, $mail, $nom, $prenom, $telephone)
+    public function createSession($id)
     {
         $account = [
-            "id" => $id,
-            "mailvisiteur" => $mail,
-            "nomvisiteur" => $nom,
-            "prenomvisiteur" => $prenom,
-            "numtelephonevisiteur" => $telephone,
-            "vitessemarche" => $vitesse
+            "id" => $id
         ];
         $_SESSION["session"] = $account;
     }

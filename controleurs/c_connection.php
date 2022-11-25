@@ -19,12 +19,7 @@ switch ($action) {
                 $account = $pdo->accountExist($mail, $password);
                 if (!empty($account)) {
                     $id = $account['Id_Visiteur'];
-                    $mail = $account['mailvisiteur'];
-                    $nom = $account['nomvisiteur'];
-                    $prenom = $account['prenomvisiteur'];
-                    $telephone = $account['numtelephonevisiteur'];
-                    $password = $account['Password'];
-                    $pdo->createSession($id, $mail, $nom, $prenom, $telephone);
+                    $pdo->createSession($id);
                     header('Location: index.php?uc=account&action=profile');
                 } else {
                     include("Vues/v_seconnecter.php");

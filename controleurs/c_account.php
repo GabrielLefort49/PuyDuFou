@@ -3,18 +3,26 @@
 $action = $_REQUEST['action'];
 switch ($action) {
     case 'profile': {
+            $id = $_SESSION['session']['id'];
+            $laLigne = $pdo->getVisiteur($id);
             include('Vues/v_account.php');
+            break;
         }
     case 'confirmModification': {
-        $idVisiteur = $_SESSION['session']['id'];
-        $nomVisiteur = $_SESSION['session']['nomvisiteur'];
-        $prenomVisiteur = $_SESSION['session']['prenomvisiteur'];
-        $mail = $_SESSION['session']['mailvisiteur'];
-        $telephone = $_SESSION['session']['numtelephonevisiteur'];
-        $vitessemarche = $_SESSION['session']['vitessemarche'];
+            $id = $_SESSION['session']['id'];
+            $nom = $_REQUEST['nomvisiteur'];
+            $prenom = $_REQUEST['prenomvisiteur'];
+            $mail = $_REQUEST['mailvisiteur'];
+            $telephone = $_REQUEST['numtelephonevisiteur'];
+            $marche = $_REQUEST['vitessemarche'];
+            $pdo->modifierVisiteur($id, $nom, $prenom, $mail, $telephone, $marche);
 
-        $pdo->modifierVisiteur($idVisiteur, $nomVisiteur, $prenomVisiteur, $mail, $telephone, $vitessemarche);
-
-        header('Location: index.php?uc=account&action=profile');
+            $laLigne = $pdo->getVisiteur($id);
+            include('Vues/v_account.php');
+            break;
+        }
+    case 'programme': {
+            include('essai_parcours.php');
+            break;
         }
 }

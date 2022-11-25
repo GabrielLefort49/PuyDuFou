@@ -5,10 +5,10 @@ include("Vues/v_entete.php");
 
 <div class="wrapper-profile">
     <div class="sidebar">
-        <h3><?= $_SESSION['session']['prenomvisiteur'] ?></h3>
+        <h3>Profile</h3>
         <ul>
-            <li><a href="#"><i class="fa-solid fa-user"></i> Profile</a></li>
-            <li><a href="#"><i class="fas fa-blog"></i>Programme</a></li>
+            <li><a href="index.php?uc=account&action=profile"><i class="fa-solid fa-user"></i> Profile</a></li>
+            <li><a href="index.php?uc=account&action=programme"><i class="fas fa-blog"></i>Programme</a></li>
             <li><a href="index.php?uc=connection&action=deconnexion"><i class="fas fa-map-pin"></i>Deconnection</a></li>
         </ul>
     </div>
@@ -20,34 +20,26 @@ include("Vues/v_entete.php");
                 </div>
                 <div class="form-container">
                     <div class="form-inner">
-                        <form
-                            action="index.php?uc=account&action=confirmModification&num=<?php echo $_SESSION['session']['id'] ?> ?>"
+                        <form action="index.php?uc=account&action=confirmModification&num=<?php echo $id ?>"
                             method="post" class="login">
                             <div class="field">
-                                <input type="text" name="nom" placeholder="nom"
-                                    value="<?= $_SESSION['session']['nomvisiteur'] ?>">
+                                <input type="text" name="nom" placeholder="nom" value="<?= $laLigne['nomvisiteur'] ?>">
                             </div>
                             <div class="field">
                                 <input type="text" name="prenom" placeholder="prenom"
-                                    value="<?= $_SESSION['session']['prenomvisiteur'] ?>">
+                                    value="<?= $laLigne['prenomvisiteur'] ?>">
                             </div>
                             <div class="field">
                                 <input type="mail" name="username" placeholder="Adresse Mail"
-                                    value="<?= $_SESSION['session']['mailvisiteur'] ?>">
+                                    value="<?= $laLigne['mailvisiteur'] ?>">
                             </div>
                             <div class="field">
                                 <input type="text" name="telephone" placeholder="Veuillez entrez un numéro de téléphone"
-                                    value="<?= $_SESSION['session']['numtelephonevisiteur'] ?>">
+                                    value="<?= $laLigne['numtelephonevisiteur'] ?>">
                             </div>
                             <div class="field">
-                                <input type="text" name="pas" placeholder="Entrez votre vitesse de pas" 
-                                value="<?= $_SESSION['session']['vitessemarche'] ?>">
-                            </div>
-                            <div class="field">
-                                <input type="password" name="password" placeholder="Mot de passe" value="">
-                            </div>
-                            <div class="field">
-                                <input type="submit" value="Modifier">
+                                <input type="text" name="pas" placeholder="Entrez votre vitesse de pas"
+                                    value="<?= $laLigne['vitessemarche'] ?>">
                             </div>
                         </form>
                     </div>
