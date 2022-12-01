@@ -10,9 +10,9 @@ $idvisiteur = 1;
 
 try {
 	if ($_SERVER['SERVER_NAME'] == 'localhost') {
-		$pdo = new PDO('mysql:host=db;dbname=PuyDuFou', 'root', '');
+		$pdo = new PDO('mysql:host=db672809286.db.1and1.com;dbname=db672809286', 'dbo672809286', 'BMw1234*');
 	} else {
-		$pdo = new PDO('mysql:host=db;dbname=PuyDuFou', 'root', '');
+		$pdo = new PDO('mysql:host=db672809286.db.1and1.com;dbname=db672809286', 'dbo672809286', 'BMw1234*');
 	}
 } catch (Exception $e) {
 	die('erreur :' . $e->getMessage());
