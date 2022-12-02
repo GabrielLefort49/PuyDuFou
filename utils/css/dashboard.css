@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+nav {
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  z-index: 9;
+  transition: 0.7s;
+}
+nav.container-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#navbar {
+  background: #efefef;
+  padding: 1em;
+}
+
+.container {
+  max-width: 1350px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.container.container, .container .container-inner {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.brand {
+  width: 150px;
+  height: 92px;
+}
+
+.container-inner {
+  max-width: 1000px;
+}
+
+nav .container ul {
+  width: 100%;
+  margin: 0 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav .container ul li {
+  display: inline-block;
+  margin: 0 0.7em;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: 0.3s;
+  font-weight: 600;
+  color: black;
+}
+nav a:hover {
+  color: #8b1414;
+}
+
+.dashboard_gen {
+  display: flex;
+  flex-direction: row;
+  background-color: #00202c;
+  padding: 3%;
+  justify-content: space-between;
+}
+
+.dashboard_list {
+  width: 450px;
+  height: 503px;
+}
+
+.dashboard_actuday {
+  color: white;
+  background-color: #243f4a;
+  border: 4px solid #243f4a;
+}
+@media only screen and (max-width: 750px) {
+  .dashboard_actuday {
+    max-width: 100%;
+  }
+}
+
+.dashboard_calendar {
+  color: white;
+  background-color: #243f4a;
+  border: 4px solid #243f4a;
+}
+@media only screen and (max-width: 750px) {
+  .dashboard_calendar {
+    max-width: 100%;
+  }
+}
+
+.dashboard_show {
+  color: white;
+  background-color: #243f4a;
+  border: 4px solid #243f4a;
+}
+@media only screen and (max-width: 750px) {
+  .dashboard_show {
+    max-width: 100%;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-family: "GoudyOldStyleTOT-Bold";
+}
+
+#cercle {
+  background: #243f4a;
+  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  border: 2px solid #243f4a;
+  margin-left: 32.5%;
+}
+#cercle:hover {
+  background: #00202c;
+}
+#cercle i.fa-sharp.fa-solid.fa-calendar-days {
+  font-size: 120px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  padding-top: 9%;
+}
+#cercle i.fa-regular.fa-calendar {
+  font-size: 120px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  padding-top: 9%;
+}
+#cercle i.fa-regular.fa-eye {
+  font-size: 120px;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  padding-top: 9%;
+}
+
+#showtime {
+  text-align: center;
+}
+
+#showdate {
+  padding: 15px;
+}
+
+.time_oc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.div_opentime,
+.div_closetime {
+  text-align: center;
+}/*# sourceMappingURL=dashboard.css.map */

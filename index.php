@@ -19,6 +19,11 @@ switch ($uc) {
             include("Vues/v_accueil.php");
             break;
         }
+    case 'dashboard':{
+            include("vues/v_dashboard.php");
+            break;
+        }
+
     case 'connection': {
             include('controleurs/c_connection.php');
             break;
@@ -27,4 +32,12 @@ switch ($uc) {
             include('controleurs/c_account.php');
             break;
         }
+    case 'actuday': {
+            include('controleurs/c_actuday.php');
+            break;
+    }
+    case 'spectacle': {
+        include('controleurs/c_spectacle.php');
+        break;
+}
 }

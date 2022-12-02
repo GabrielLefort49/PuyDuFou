@@ -58,6 +58,13 @@ class PdoPuyDuFou
         $lesLignes = $res->fetchAll();
         return $lesLignes;
     }
+    public function getLesActudays()
+    {
+        $req = "SELECT * FROM `Parc_dates`";
+        $res = PdoPuyDuFou::$monPdo->query($req);
+        $lesLignes = $res->fetchAll();
+        return $lesLignes;
+    }
 
     /**
      * Retourne tous les spéctacles sous forme d'un tableau associatif
@@ -151,4 +158,5 @@ class PdoPuyDuFou
     {
         $_SESSION["session"] = null;
     }
+    
 }
